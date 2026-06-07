@@ -1,4 +1,4 @@
-name: Build N1 Firmware 1
+name: Build N1 Firmware 2
 
 on:
   push:
