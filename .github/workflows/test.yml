@@ -1,32 +1,11 @@
-name: Build N1 Firmware
+name: test
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
-  build:
-    runs-on: ubuntu-22.04
-
+  test:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install packages
-        run: |
-          sudo apt update
-          sudo apt install -y git wget curl
-
-      - name: Clone source
-        run: |
-          git clone https://github.com/ophub/amlogic-s9xxx-openwrt.git openwrt
-
-      - name: Start build
-        run: |
-          cd openwrt
-          bash build.sh
-
-      - name: Upload firmware
-        uses: actions/upload-artifact@v4
-        with:
-          name: N1-firmware
-          path: openwrt/out/
+      - name: hello
+        run: echo hello world
